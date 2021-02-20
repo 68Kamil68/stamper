@@ -152,4 +152,7 @@ dmypy.json
 # profiling data
 .prof
 
+# VS Code
+.vscode/
+
 # End of https://www.toptal.com/developers/gitignore/api/django
