@@ -21,8 +21,8 @@ services:
   postgres:
     image: postgres:13.0
     restart: always
-    hostname: uml-db
-    container_name: uml-db
+    hostname: stamper-db
+    container_name: stamper-db
     volumes:
       - ./pg-init-scripts:/docker-entrypoint-initdb.d
     environment:

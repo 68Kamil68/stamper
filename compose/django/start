@@ -1,8 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -o errexit
 set -o pipefail
 set -o nounset
+
+chmod +x compose/django/wait-for-it.sh
 
 ./compose/django/wait-for-it.sh -t 300 postgres:5432
 python manage.py migrate
