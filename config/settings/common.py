@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "social_django",
     "apps.users",
 ]
 
@@ -118,4 +119,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = "/static/"
+
+
+# USER AUTH SETTINGS
 AUTH_USER_MODEL = "users.User"
+
+
+AUTHENTICATION_BACKENDS = (
+    "social_core.backends.google.GoogleOAuth2",
+    "social_core.backends.google.FacebookOAuth2",
+    "django.contrib.auth.backends.ModelBackend",
+)
