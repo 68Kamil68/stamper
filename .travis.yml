@@ -8,4 +8,5 @@ services:
 before_script: pip install docker-compose
 
 script:
-  - docker-compose up --build && docker-compose run stamper-api sh -c "python manage.py test"
+  - docker-compose up --build
+  - docker-compose run stamper-api sh -c "python manage.py test"
