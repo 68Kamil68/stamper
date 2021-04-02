@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/django/Dockerfile
-    image: uml
+    image: stamper-api
     depends_on:
       - postgres
     volumes:
