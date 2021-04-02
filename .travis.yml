@@ -5,9 +5,12 @@ python:
 services:
   - docker
 
-before_script: pip install docker-compose
+before_script: 
+  - pip install docker-compose
+  - docker-compose up -d --build
 
 script:
-  - docker-compose build
-  - docker ps
-  - docker-compose run stamper-api sh -c "python manage.py test"
+  - docker-compose exec stamper-api python manage.py test --settings=config.settings.testing
+
+after_script:
+  - docker-compose down
